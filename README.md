@@ -1,4 +1,5 @@
-configs
+Configurations
 =======
 
 My personal configuration files
+
