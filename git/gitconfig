@@ -2,7 +2,7 @@
 	excludesfile = /Users/thomas/.gitignore_global
 [user]
 	name = Thomas Kjøglum
-	email = thokjo@signicat.com
+	email = 
 [push]
     default = simple
 [color]
