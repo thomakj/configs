@@ -4,7 +4,7 @@ Mac configurations
 To be able to use right ctrl and arrow keys as in a Linux terminal the following steps should be performed.
 
 1. Remove keybinding in MacOS
- * System settings -> Keyboard -> Mission Control
+ * System settings -> Keyboard -> Shortcuts -> Mission Control
  * Untack the "Move left a space" and "Move right a space" options
 2. iTerm2 -> Preferences -> Profiles -> Keys
  * Change "^<-" to: "Send Escape Sequence" and "[1;5D"
