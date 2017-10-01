@@ -17,24 +17,30 @@
 #   -------------------------------
 
 # Java and Maven
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home
-export M2_HOME=/Users/thomas/Applications/apache-maven-3.2.3
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home
+export M2_HOME=/Users/thomas/Applications/apache-maven-3.2.5
 export M2=$M2_HOME/bin
-export PATH=$PATH:$M2:$JAVA_HOME
+export PATH=/usr/local/bin/:$PATH:$M2:$JAVA_HOME
 
 # Changing terminal user, host and path color and layout
-export PS1="\[\033[31m\]\u\[\033[m\]@\[\033[31m\]\h:\[\033[36m\]\w\[\033[m\]\$ "
+#export PS1="\[\033[31m\]\u\[\033[m\]@\[\033[31m\]\h:\[\033[36m\]\w\[\033[m\]\$ "
+#export PS1="\[\033[31m\]\h:\[\033[36m\]\W\[\033[m\]\$ "
+export PS1='\[\033[31m\]\h:\[\033[36m\]\w:\[\033[35m\]$(__git_ps1 " (%s)")\n\[\033[m\]> '
+#export PS1='\[\033[31m\]\h:\[\033[36m\]\w:\[\033[35m\]$(__git_ps1 " (%s)")\n\[\033[4;31m\][\d]\[\033[m\] > '
+#export PS1='\u@\h:\w$(__git_ps1 " (%s)") \$ '
 
 # Terminal colors
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxCxegedabagaced
 
+# Setting Local Language settings
+export LANGUAGE=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 # WeChall tokens
 export WECHALLUSER="Ciphers"
 export WECHALLTOKEN="43F55-23233-5E97A-D6096-A0CDC-09587"
-
-# MacPorts Installer addition on 2014-11-03_at_21:56:57: adding an appropriate PATH variable for use with MacPorts.
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 
 #   -------------------------------
 # 	2.	Aliasses
@@ -48,10 +54,17 @@ alias l='ls -lA'
 # cd
 alias cd..='cd ..'
 
-# To get programmable completion feature on git 
-# it is necessary to use git installed with brew:
-# brew install git
-alias git='/usr/local/bin/git'
+# Copy paste
+alias copy='pbcopy'
+alias paste='pbpaste'
+
+# App aliases
+alias subl='/Applications/Sublime\ Text.app/Contents/MacOS/Sublime\ Text'
+alias openssl='/usr/local/opt/openssl/bin/openssl'
+alias msfconsole='launchctl load -w /usr/local/Cellar/postgresql/9.4.1/homebrew.mxcl.postgresql.plist && msfconsole'
+alias myip='curl ip.appspot.com && echo'            # myip:         Public facing IP Address
+alias openPorts='sudo lsof -i | grep LISTEN'        # openPorts:    All listening connections
+
 
 #   -------------------------------
 #   3.  FILE AND FOLDER MANAGEMENT
@@ -84,9 +97,6 @@ alias git='/usr/local/bin/git'
 #   4.  NETWORKING
 #   ---------------------------
 
-alias myip='curl ip.appspot.com'                    # myip:         Public facing IP Address
-alias openPorts='sudo lsof -i | grep LISTEN'        # openPorts:    All listening connections
-
 #   ii:  display useful host related informaton
 #   -------------------------------------------------------------------
     ii() {
@@ -105,7 +115,7 @@ alias openPorts='sudo lsof -i | grep LISTEN'        # openPorts:    All listenin
 #   5.  Misc
 #   ---------------------------
 
-# Enable programmable completion features. Remember to infall the program running: brew install bash-completion 
+# Enable programmable completion features. Remember to infall the program running: brew install bash-completion, and uncomment the alias of git
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
