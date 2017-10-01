@@ -25,9 +25,15 @@ export PATH=/usr/local/bin/:$PATH:$M2:$JAVA_HOME
 # Changing terminal user, host and path color and layout
 #export PS1="\[\033[31m\]\u\[\033[m\]@\[\033[31m\]\h:\[\033[36m\]\w\[\033[m\]\$ "
 #export PS1="\[\033[31m\]\h:\[\033[36m\]\W\[\033[m\]\$ "
-export PS1='\[\033[31m\]\h:\[\033[36m\]\w:\[\033[35m\]$(__git_ps1 " (%s)")\n\[\033[m\]> '
-#export PS1='\[\033[31m\]\h:\[\033[36m\]\w:\[\033[35m\]$(__git_ps1 " (%s)")\n\[\033[4;31m\][\d]\[\033[m\] > '
-#export PS1='\u@\h:\w$(__git_ps1 " (%s)") \$ '
+
+## Git branch in prompt.
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+#export PS1='\[\033[31m\]\h:\[\033[36m\]\w:\[\033[35m\]$(parse_git_branch)\n\[\033[m\]> '
+export PS1='\[\033[31m\]\h:\[\033[36m\]\W\[\033[35m\]$(parse_git_branch)\[\033[m\]$ '
+#export PS1='\[\033[31m\]\h:\[\033[36m\]\w:\[\033[35m\]$(parse_git_branch)\n\[\033[4;31m\][\d]\[\033[m\] > '
+#export PS1='\u@\h:\w$(parse_git_branch) \$ '
 
 # Terminal colors
 export CLICOLOR=1
