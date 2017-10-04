@@ -1,6 +1,7 @@
 Mac configurations
 ==================
 
+## iTerm ctrl modification
 To be able to use right ctrl and arrow keys as in a Linux terminal the
 following steps should be performed.
 
@@ -12,3 +13,14 @@ following steps should be performed.
  * Change/Verify "^->" to: "Send Escape Sequence" and "[1;5C"
 3. Copy inputrc to ~/.inputrc
 4. Source the new file or reload terminal
+
+
+## Change computer name in terminal display
+
+```
+sudo scutil --set ComputerName "newname"
+sudo scutil --set LocalHostName "newname"
+sudo scutil --set HostName "newname"
+dscacheutil -flushcache
+```
+Then restart the computer.
