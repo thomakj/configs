@@ -17,8 +17,8 @@
 #   -------------------------------
 
 # Java and Maven
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home
-export M2_HOME=/Users/thomas/Applications/apache-maven-3.2.5
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-9.jdk/Contents/Home
+export M2_HOME=/opt/apache-maven-3.5.0
 export M2=$M2_HOME/bin
 export PATH=/usr/local/bin/:$PATH:$M2:$JAVA_HOME
 
@@ -122,8 +122,8 @@ alias openPorts='sudo lsof -i | grep LISTEN'        # openPorts:    All listenin
 #   5.  Misc
 #   ---------------------------
 
-# Enable programmable completion features. 
-# Remember to install the programs: 
+# Enable programmable completion features.
+# Remember to install the programs:
 # - brew install bash-completion
 # - brew install git
 # and uncomment the alias of git
