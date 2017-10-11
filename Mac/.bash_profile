@@ -67,6 +67,7 @@ alias paste='pbpaste'
 # App aliases
 alias subl='/Applications/Sublime\ Text.app/Contents/MacOS/Sublime\ Text'
 alias openssl='/usr/local/opt/openssl/bin/openssl'
+alias git='/usr/local/opt/git/bin/git'
 alias msfconsole='launchctl load -w /usr/local/Cellar/postgresql/9.4.1/homebrew.mxcl.postgresql.plist && msfconsole'
 alias myip='curl ip.appspot.com && echo'            # myip:         Public facing IP Address
 alias openPorts='sudo lsof -i | grep LISTEN'        # openPorts:    All listening connections
@@ -121,7 +122,11 @@ alias openPorts='sudo lsof -i | grep LISTEN'        # openPorts:    All listenin
 #   5.  Misc
 #   ---------------------------
 
-# Enable programmable completion features. Remember to infall the program running: brew install bash-completion, and uncomment the alias of git
+# Enable programmable completion features. 
+# Remember to install the programs: 
+# - brew install bash-completion
+# - brew install git
+# and uncomment the alias of git
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
