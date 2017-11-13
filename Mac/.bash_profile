@@ -20,7 +20,8 @@
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-9.jdk/Contents/Home
 export M2_HOME=/opt/apache-maven-3.5.0
 export M2=$M2_HOME/bin
-export PATH=/usr/local/bin/:$PATH:$M2:$JAVA_HOME
+export TEX=/Library/TeX/texbin
+export PATH=/usr/local/bin/:$PATH:$M2:$JAVA_HOME:$TEX
 
 # Changing terminal user, host and path color and layout
 #export PS1="\[\033[31m\]\u\[\033[m\]@\[\033[31m\]\h:\[\033[36m\]\w\[\033[m\]\$ "
