@@ -53,6 +53,7 @@ set mat=2
 set noerrorbells
 set novisualbell
 set nu
+set relativenumber
 
 " Colors and Fonts
 
@@ -92,6 +93,7 @@ let g:NERDTreeIndicatorMapCustom = {
     \ }
 
 let g:NERDTreeShowIgnoredStatus = 1
+let NERDTreeShowHidden=1
 
 call vundle#end()
 filetype plugin indent on
