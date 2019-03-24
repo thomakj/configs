@@ -112,4 +112,5 @@ if ! shopt -oq posix; then
 fi
 
 # Enable auto completion for git
+# This could be different dependent on the distor, please check the path
 source /etc/bash_completion.d/git-prompt
