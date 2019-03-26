@@ -38,6 +38,7 @@ set laststatus=2
 "set statusline=\ %{HasPaste()}%F%m%r%h\ %w \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %1
 
 let python_highlight_all=1
+colo elflord
 syntax on
 
 " Internface
