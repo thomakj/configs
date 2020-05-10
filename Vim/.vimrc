@@ -68,6 +68,9 @@ nmap <leader>w :w!<cr>
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
 
+" Turn on ruler
+set nu
+
 " Turn on the WiLd menu
 set wildmenu
 
