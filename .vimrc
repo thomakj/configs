@@ -1,5 +1,7 @@
 set nocompatible
 filetype off
+packloadall
+silent! helptags ALL
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -11,7 +13,8 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-"au BufNewFile,BufRead *.py
+silent! au BufNewFile,BufRead *.py
+
 set history=700
 
 filetype plugin on
@@ -27,6 +30,7 @@ set smarttab
 set ai
 set si
 set wrap
+set spell
 
 " Auto read when a file is changed from the outside
 set autoread
@@ -55,6 +59,7 @@ set noerrorbells
 set novisualbell
 set nu
 set relativenumber
+set colorcolumn=80
 
 " Colors and Fonts
 
@@ -67,34 +72,35 @@ set nowb
 set noswapfile
 
 
-"Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'vim-scripts/indentpython.vim'
 "Bundle 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
-Plugin 'nvie/vim-flake8'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-fugitive'
+"Plugin 'nvie/vim-flake8'
+"Plugin 'scrooloose/nerdtree'
+"Plugin 'Xuyuanp/nerdtree-git-plugin'
+"Plugin 'kien/ctrlp.vim'
+"Plugin 'tpope/vim-fugitive'
+Plugin 'dense-analysis/ale'
 
 " NERDTree open on startup
 "autocmd vimenter * NERDTree
 
-let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "✹",
-    \ "Staged"    : "✚",
-    \ "Untracked" : "✭",
-    \ "Renamed"   : "➜",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "✖",
-    \ "Dirty"     : "✗",
-    \ "Clean"     : "✔︎",
-    \ 'Ignored'   : '☒',
-    \ "Unknown"   : "?"
-    \ }
+"let g:NERDTreeIndicatorMapCustom = {
+    "\ "Modified"  : "✹",
+    "\ "Staged"    : "✚",
+    "\ "Untracked" : "✭",
+    "\ "Renamed"   : "➜",
+    "\ "Unmerged"  : "═",
+    "\ "Deleted"   : "✖",
+    "\ "Dirty"     : "✗",
+    "\ "Clean"     : "✔︎",
+    "\ 'Ignored'   : '☒',
+    "\ "Unknown"   : "?"
+    "\ }
 
-let g:NERDTreeShowIgnoredStatus = 1
-let NERDTreeShowHidden=1
+"let g:NERDTreeShowIgnoredStatus = 1
+"let NERDTreeShowHidden=1
 
 call vundle#end()
 filetype plugin indent on
