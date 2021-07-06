@@ -21,16 +21,16 @@ filetype plugin on
 filetype indent on
 
 " Text, tab and indent related
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set textwidth=79
 set expandtab
 set smarttab
 set ai
 set si
 set wrap
-set spell
+"set spell
 
 " Auto read when a file is changed from the outside
 set autoread
